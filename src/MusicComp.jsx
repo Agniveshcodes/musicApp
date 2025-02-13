@@ -114,7 +114,7 @@ function MusicComp() {
 
         {/* songs list section  */}
 
-        <div className=" rounded-md p-5 h-108 w-4xl bg-[url('ba.avif')] bg-cover bg-center mx-auto mt-12">
+        <div className=" rounded-md p-5 h-108 w-4xl bg-[url('https://images.unsplash.com/photo-1487215078519-e21cc028cb29?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGVhZHBob25lcyUyMGJsYWNrfGVufDB8fDB8fHww')] bg-cover bg-center mx-auto mt-12">
           {songs.map((song, i) => {
             return (
               <div
