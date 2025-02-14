@@ -1,40 +1,15 @@
 import React, { useRef, useState, useEffect } from "react";
 import { FaBackward, FaForward, FaPause, FaPlay } from "react-icons/fa";
+import { Link } from "react-router";
 
 //ComponentDescription
-function MusicComp() {
+function MusicComp({ songs }) {
   const [activeSongIndex, setActiveSongIndex] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentSongName, setCurrentSongName] = useState("");
   const audio = useRef(new Audio("songs1.mp3"));
 
-  const songs = [
-    {
-      songName: "vinee-hieghts",
-      filePath: "songs1.mp3",
-      coverPath: "cover1.avif",
-    },
-    {
-      songName: "breaking-news-symphony",
-      filePath: "songs2.mp3",
-      coverPath: "cover2.avif",
-    },
-    {
-      songName: "whispers-of-the-wind",
-      filePath: "songs3.mp3",
-      coverPath: "cover3.avif",
-    },
-    {
-      songName: "himalayan-village-fluets",
-      filePath: "songs4.mp3",
-      coverPath: "cover4.avif",
-    },
-    {
-      songName: "galaxy",
-      filePath: "songs5.mp3",
-      coverPath: "cover5.avif",
-    },
-  ];
+  
 
   // useEffect to ensure event listener is set only once
   useEffect(() => {
@@ -109,6 +84,7 @@ function MusicComp() {
             <li>Home</li>
             <li>About</li>
             <li>Services</li>
+            <Link to={"/addSong"} > add song </Link>
           </ul>
         </nav>
 
