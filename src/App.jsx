@@ -1,8 +1,10 @@
 import { Route, Routes } from "react-router";
 import MusicComp from "./MusicComp";
 import AddSongs from "./AddSongs";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [newSongs, setNewSongs] = useState([]);
   const songs = [
     {
       songName: "vinee-hieghts",
@@ -31,13 +33,15 @@ function App() {
     },
   ];
 
-  let newSongs = JSON.parse(localStorage.getItem("songs")) || songs;
+  useEffect(() => {
+    setNewSongs(JSON.parse(localStorage.getItem("songs")) || songs);
+  }, []);
 
   return (
     <>
       <Routes>
         <Route index element={<MusicComp songs={newSongs} />} />
-        <Route path="/addSong" element={<AddSongs songs={songs} />} />
+        <Route path="/addSong" element={<AddSongs songs={newSongs} />} />
       </Routes>
     </>
   );
