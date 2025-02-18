@@ -7,16 +7,14 @@ function AddSongs({ songs }) {
   const [songUrl, setSongUrl] = useState("");
   const [songImageUrl, setSongImageUrl] = useState("");
 
+  console.log(songs);
+
   function addTheSong() {
-    songs.push([
-      ...songs,
-      {
-        songName: songName,
-        filePath: songUrl,
-        coverPath: songImageUrl,
-      },
-    ]);
-    console.log(songs);
+    songs.push({
+      songName: songName,
+      filePath: songUrl,
+      coverPath: songImageUrl,
+    });
     setSongName("");
     setSongImageUrl("");
     setSongUrl("");
